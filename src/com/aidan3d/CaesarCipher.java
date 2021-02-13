@@ -72,12 +72,12 @@ public class CaesarCipher {
         // current "seat" being looked at (all seats have
         // a passenger of some kind, and are envisioned to
         // be, abstractly, placed in a single row. Cool bus!
-        char hotSeat;
+        char currentPassengerOldName;
 
         // I will now initialize the thing-that-holds the-
         // current character being admired. An eyeball to
         // rove the bus' dark interior!
-        hotSeat = ' ';
+        currentPassengerOldName = ' ';
 
         // This next part loops through the "bus," looking
         // at every seat. isHuman means that we have a "human"
@@ -87,9 +87,9 @@ public class CaesarCipher {
         for ( int i = 0; i < bus.length(); i++ ) {
 
             // Look at the current "seat."
-            hotSeat = bus.charAt(i);
+            currentPassengerOldName = bus.charAt(i);
 
-            if ( isHuman( hotSeat, EXISTING_SEATING_LIST ) ) {
+            if ( isHuman( currentPassengerOldName, EXISTING_SEATING_LIST ) ) {
                 // bus.charAt(i) = bump(seat, i);
             } // End of the single-alternative
               // decision structure
