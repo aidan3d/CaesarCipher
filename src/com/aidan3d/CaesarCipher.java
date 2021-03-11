@@ -8,7 +8,7 @@ package com.aidan3d;
  * @author    Aidan Hegarty (with a great deal
  *            deal of help from Duke University via
  *            Coursera!)
- * @version   2/28/21
+ * @version   3/11/21
  */
 
 
@@ -19,22 +19,24 @@ public class CaesarCipher {
      * it runs through a list of characters, seeing if each is a
      * regular member of the alphabet (lower- or upper-case).
      *
-     * @param currentPersonOfInterest   The current slot at at which
+     * @param currentPersonOfInterest   The current 'slot' at which
      *                                  we are looking, as we thumb
      *                                  through our incoming
      *                                  message's characters.
      * @param alphabets                 Letters of the alphabet. If
      *                                  it's a letter, we encode it!
      *                                  Fed into this function for
-     *                                  convenience.
+     *                                  convenience (for this cipher
+     *                                  the 'code book' is just the
+     *                                  upper and lower-case alphabet).
      * @return                          A signal flag, raised if a
      *                                  character is to be found in
      *                                  the lower- and upper-case
-     *                                  string referenced by the
-     *                                  parameter "alphabets."
+     *                                  alphabet string referenced by
+     *                                  the parameter "alphabets."
      */
-    private boolean isHuman(char currentPersonOfInterest,
-        String alphabets) {
+    private boolean isHuman( char currentPersonOfInterest,
+        String alphabets ) {
 
         // Lower my boolean flag first. Assume I have picked
         // an off-the-manifest (unlisted) person initially...
@@ -42,16 +44,16 @@ public class CaesarCipher {
 
         // Check whether the one seated is, indeed, human
         // after all!
-        if ( -1 != alphabets.indexOf(currentPersonOfInterest ) ) {
+        if ( -1 != alphabets.indexOf( currentPersonOfInterest ) ) {
             doesBelong = true;
         } // End of the single-alternative decision structure
 
-        // Finally, let the calling method know that whether
-        // the person popped is supposed to be at the "party!"
+        // Finally, let the calling method know whether the
+        // person popped is supposed to be at the 'party!'
         return doesBelong;
     } // end method isHuman
 
-    char bump(int oldPassengerSeatNumber, int newPassengerSeatNumber) {
+    char bump( int oldPassengerSeatNumber, int newPassengerSeatNumber ) {
         // physically change the character
     } // end method bump
 
